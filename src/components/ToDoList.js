@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CheckBox from './Checkbox';
+
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
@@ -15,6 +17,7 @@ class ToDoList extends React.Component {
 
         this.handleValueChange = this.handleValueChange.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.handleTodoChange = this.handleTodoChange.bind(this);
         this._renderItems = this._renderItems.bind(this);
     }
 
@@ -40,6 +43,10 @@ class ToDoList extends React.Component {
         }
     }
 
+    handleTodoChange(index) {
+
+    }
+
     _renderItems() {
         const { items } = this.state;
 
@@ -48,11 +55,16 @@ class ToDoList extends React.Component {
         }
 
         return (
-            <ul>
+            <ul className="todo__list">
                 {
                     items.map((item, i) => (
                         <li className="todo__item">
-                            <span>{item.label}</span>
+                            <CheckBox
+                                checked={item.done}
+                                onChange={this.handleTodoChange.bind(this, i)}
+                                index={i}
+                                label={item.label}
+                            />
                         </li>
                     ))
                 }
@@ -74,9 +86,7 @@ class ToDoList extends React.Component {
                         value={value}
                     ></input>
                 </div>
-                <div className="todo__items-container">
-                    {this._renderItems()}
-                </div>
+                {this._renderItems()}
             </div>
         );
     }

@@ -25,7 +25,7 @@ h1 {
 }
 
 
-input {
+input[type='text'] {
   margin: 14px 20px;
   padding: 7px;
   font-size: 20px;
@@ -37,7 +37,7 @@ input {
   flex: 1;
 }
 
-input:focus { 
+input[type='text']:focus { 
   border: none;
   border-bottom: 2px solid #000;
   outline: none;
@@ -76,4 +76,15 @@ input:focus {
 .todo__no-items {
   color: black;
   margin: 20px;
+}
+
+.todo__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.todo__item {
+  cursor: pointer;
 }
