@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import ToDoList from './components/ToDoList';
 import './App.css';
 
 function App() {
@@ -10,9 +10,7 @@ function App() {
         <p>A simple to-do list PWA built using React</p>
       </header>
       <main>
-        <div class="todo__container">
-          <input placeholder="Add to-do"></input>
-        </div>
+        <ToDoList />
       </main>
       <footer>
 
