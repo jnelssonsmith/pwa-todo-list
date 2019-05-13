@@ -43,14 +43,25 @@ input[type='checkbox'] + label > span{
 input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
   color: black;
 }
+
 input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
-  background: red;
+    background-color: #EEEEEE
+}
+
+input[type='checkbox']:checked + label {
+    text-decoration: line-through;
 }
 
 input[type='checkbox']:checked + label > span{
   border: .5em solid #FFEB3B;
   animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
 }
+
+input[type='checkbox']:checked + label:hover,
+input[type='checkbox']:focus + label {
+    border: 1px solid #EEEEEE;
+}
+
 input[type='checkbox']:checked + label > span:before{
   content: "";
   position: absolute;
@@ -74,6 +85,7 @@ input[type='checkbox']:checked + label > span:before{
     transform: scale(1);    
   }
 }
+
 @keyframes checkbox-check{
   0%{
     width: 0;
